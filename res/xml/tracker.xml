@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="ga_sessionTimeout">604800</integer>
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <screenName name="com.google.android.gms.analytics.samples.mobileplayground.ScreenviewFragment"> Shadowsocks ScreenView
+</screenName>
+    <screenName name="com.google.android.gms.analytics.samples.mobileplayground.EcommerceFragment"> Shadowsocks EcommerceView
+</screenName>
+    <string name="ga_trackingId">UA-37082941-1</string>
+</resources>

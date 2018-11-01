@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:icon="@drawable/ic_qu_shadowsocks_launcher">
+        <intent android:targetPackage="in.zhaoj.shadowsocksrr" android:action="android.intent.action.MAIN" android:targetClass="com.github.shadowsocks.QuickToggleShortcut" />
+    </shortcut>
+    <shortcut android:icon="@drawable/ic_qu_shadowsocks_launcher">
+        <intent android:targetPackage="in.zhaoj.shadowsocksrr" android:action="android.intent.action.MAIN" android:targetClass="com.github.shadowsocks.ShadowsocksQuickSwitchActivity" />
+    </shortcut>
+    <shortcut android:icon="@drawable/ic_qu_camera_launcher">
+        <intent android:targetPackage="in.zhaoj.shadowsocksrr" android:action="android.intent.action.MAIN" android:targetClass="com.github.shadowsocks.Shadowsocks" />
+        <intent android:targetPackage="in.zhaoj.shadowsocksrr" android:action="in.zhaoj.shadowsocksrr.intent.action.SCAN" android:targetClass="com.github.shadowsocks.ProfileManagerActivity" />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="removed">
+        <item quantity="other">已删除 %d 项</item>
+        <item quantity="one">已删除</item>
+    </plurals>
+</resources>

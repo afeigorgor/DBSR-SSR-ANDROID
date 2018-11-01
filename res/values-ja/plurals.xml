@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="removed">
+        <item quantity="other">%d を削除しました</item>
+        <item quantity="one">削除済み</item>
+    </plurals>
+</resources>

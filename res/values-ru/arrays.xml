@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="route_entry">
+        <item>Все</item>
+        <item>Обход LAN</item>
+        <item>Обходной Китай</item>
+        <item>Обход LAN и Китай</item>
+        <item>Список GFW</item>
+        <item>Пользовательские ACL файла</item>
+    </string-array>
+</resources>

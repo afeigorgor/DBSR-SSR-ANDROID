@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/toolbar_light_dark" />
+    <FrameLayout android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:elevation="1.0dip">
+        <Switch android:textSize="18.0sp" android:id="@id/serviceSwitch" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/toggle_service_state" />
+    </FrameLayout>
+    <android.support.v7.widget.RecyclerView android:id="@id/profilesList" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

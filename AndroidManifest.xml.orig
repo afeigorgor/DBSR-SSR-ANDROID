@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="in.zhaoj.shadowsocksrr" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.nfc" android:required="false"/>
+    <uses-feature android:name="android.software.leanback" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+    <application android:allowBackup="true" android:backupAgent="com.github.shadowsocks.ShadowsocksBackupAgent" android:banner="@drawable/ic_start_connected" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.github.shadowsocks.ShadowsocksApplication" android:roundIcon="@mipmap/ic_launcher" android:theme="@style/Theme.Material">
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <meta-data android:name="com.google.android.backup.api_key" android:value="AEdPqrEAAAAIPs-N3mj5f0FhZ99WjwOUoCXeCuQWToee2uvMAw"/>
+        <activity android:label="@string/app_name" android:launchMode="singleTask" android:name="com.github.shadowsocks.Shadowsocks">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
+            </intent-filter>
+            <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
+        </activity>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.github.shadowsocks.ShadowsocksRunnerActivity" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:excludeFromRecents="true" android:label="@string/profiles" android:launchMode="singleTask" android:name="com.github.shadowsocks.ProfileManagerActivity" android:parentActivityName="com.github.shadowsocks.Shadowsocks">
+            <intent-filter>
+                <action android:name="com.github.shadowsocks.ProfileManagerActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="in.zhaoj.shadowsocksrr.intent.action.SORT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="in.zhaoj.shadowsocksrr.intent.action.SCAN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="ss"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="ss"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="ssr"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="ssr"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/add_profile_methods_scan_qr_code" android:name="com.github.shadowsocks.ScannerActivity" android:parentActivityName="com.github.shadowsocks.ProfileManagerActivity"/>
+        <activity android:excludeFromRecents="true" android:label="@string/proxied_apps" android:launchMode="singleTask" android:name="com.github.shadowsocks.AppManager" android:parentActivityName="com.github.shadowsocks.Shadowsocks"/>
+        <activity android:icon="@mipmap/ic_launcher" android:name="com.github.shadowsocks.TaskerActivity">
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.EDIT_SETTING"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/quick_switch" android:launchMode="singleInstance" android:name="com.github.shadowsocks.ShadowsocksQuickSwitchActivity" android:taskAffinity="" android:theme="@style/PopupTheme.QuickSwitch">
+            <intent-filter>
+                <action android:name="in.zhaoj.shadowsocksrr.QUICK_SWITCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:excludeFromRecents="true" android:label="@string/quick_toggle" android:launchMode="singleTask" android:name="com.github.shadowsocks.QuickToggleShortcut" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="com.github.shadowsocks.ShadowsocksRunnerService"/>
+        <service android:exported="false" android:name="com.github.shadowsocks.ShadowsocksNatService" android:process=":bg"/>
+        <service android:exported="false" android:label="@string/app_name" android:name="com.github.shadowsocks.ShadowsocksVpnService" android:permission="android.permission.BIND_VPN_SERVICE" android:process=":bg">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+        <service android:icon="@drawable/ic_start_connected" android:label="@string/quick_toggle" android:name="com.github.shadowsocks.ShadowsocksTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" android:process=":bg">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+        <receiver android:enabled="false" android:name="com.github.shadowsocks.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.github.shadowsocks.TaskerReceiver">
+            <intent-filter>
+                <action android:name="com.twofortyfouram.locale.intent.action.FIRE_SETTING"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.evernote.android.job.v21.PlatformJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":bg"/>
+        <service android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmService" android:process=":bg"/>
+        <service android:enabled="false" android:exported="true" android:name="com.evernote.android.job.gcm.PlatformGcmService" android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE" android:process=":bg">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.evernote.android.job.v14.PlatformAlarmReceiver" android:process=":bg">
+            <intent-filter>
+                <action android:name="com.evernote.android.job.v14.RUN_JOB"/>
+                <action android:name="net.vrallev.android.job.v14.RUN_JOB"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.evernote.android.job.JobBootReceiver" android:process=":bg">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+    </application>
+</manifest>

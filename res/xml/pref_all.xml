@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/in.zhaoj.shadowsocksrr">
+    <PreferenceCategory android:title="@string/proxy_cat">
+        <com.github.shadowsocks.preferences.SummaryEditTextPreference android:persistent="false" android:title="@string/group_name" android:key="groupName" />
+        <com.github.shadowsocks.preferences.SummaryEditTextPreference android:persistent="false" android:title="@string/profile_name" android:key="profileName" />
+        <Preference android:persistent="false" android:title="@string/proxy" android:key="proxy" android:summary="@string/proxy_click" />
+        <com.github.shadowsocks.preferences.NumberPickerPreference android:persistent="false" android:title="@string/remote_port" android:key="remotePortNum" android:summary="@string/remote_port_summary" app:max="65535" app:min="1" />
+        <com.github.shadowsocks.preferences.NumberPickerPreference android:persistent="false" android:title="@string/port" android:key="localPortNum" android:summary="@string/port_summary" app:max="65535" app:min="1025" />
+        <com.github.shadowsocks.preferences.PasswordEditTextPreference android:persistent="false" android:title="@string/sitekey" android:key="sitekey" android:summary="@string/sitekey_summary" android:inputType="textPassword" />
+        <com.github.shadowsocks.preferences.DropDownPreference android:persistent="false" android:entries="@array/enc_method_entry" android:title="@string/enc_method" android:key="encMethod" android:summary="%s" android:entryValues="@array/enc_method_value" />
+        <com.github.shadowsocks.preferences.DropDownPreference android:persistent="false" android:entries="@array/protocol_entry" android:title="@string/protocol" android:key="protocol" android:summary="%s" android:entryValues="@array/protocol_value" />
+        <com.github.shadowsocks.preferences.SummaryEditTextPreference android:title="@string/protocol_param" android:key="protocol_param" android:summary="@string/protocol_param_summary" />
+        <com.github.shadowsocks.preferences.DropDownPreference android:persistent="false" android:entries="@array/obfs_entry" android:title="@string/obfs" android:key="obfs" android:summary="%s" android:entryValues="@array/obfs_value" />
+        <com.github.shadowsocks.preferences.SummaryEditTextPreference android:title="@string/obfs_param" android:key="obfs_param" android:summary="@string/obfs_param_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/feature_cat">
+        <com.github.shadowsocks.preferences.DropDownPreference android:persistent="false" android:entries="@array/route_entry" android:title="@string/route_list" android:key="route" android:summary="%s" android:entryValues="@array/route_value" />
+        <SwitchPreference android:persistent="false" android:title="@string/ipv6" android:key="isIpv6" android:summary="@string/ipv6_summary" />
+        <SwitchPreference android:persistent="false" android:title="@string/proxied_apps" android:key="isProxyApps" android:summary="@string/proxied_apps_summary" />
+        <SwitchPreference android:persistent="false" android:title="@string/udp_dns" android:key="isUdpDns" android:summary="@string/udp_dns_summary" />
+        <com.github.shadowsocks.preferences.SummaryEditTextPreference android:persistent="false" android:title="@string/china_dns" android:key="china_dns" android:summary="@string/china_dns_summary" />
+        <com.github.shadowsocks.preferences.SummaryEditTextPreference android:persistent="false" android:title="@string/dns" android:key="dns" android:summary="@string/dns_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/misc_cat">
+        <SwitchPreference android:persistent="false" android:title="@string/auto_connect" android:key="isAutoConnect" android:summary="@string/auto_connect_summary" />
+        <SwitchPreference android:title="TCP Fast Open" android:key="tcp_fastopen" android:summary="@string/tcp_fastopen_summary" android:defaultValue="false" />
+        <SwitchPreference android:title="@string/nat" android:key="isNAT" android:summary="@string/nat_summary" android:defaultValue="false" />
+        <Preference android:title="@string/recovery" android:key="recovery" android:summary="@string/recovery_summary" />
+        <Preference android:title="@string/ignore_battery_optimization" android:key="ignore_battery_optimization" android:summary="@string/ignore_battery_optimization_summary" />
+        <Preference android:title="@string/aclupdate" android:key="aclupdate" android:summary="@string/aclupdate_summary" />
+        <Preference android:title="@string/frontproxy_set" android:key="frontproxy" />
+        <Preference android:title="@string/about" android:key="about" />
+        <Preference android:title="Logcat" android:key="logcat" />
+    </PreferenceCategory>
+</PreferenceScreen>

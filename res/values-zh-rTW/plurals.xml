@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="removed">
+        <item quantity="other">已移除 %d 項</item>
+        <item quantity="one">已移除</item>
+    </plurals>
+</resources>
